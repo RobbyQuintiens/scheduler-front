@@ -14,22 +14,20 @@ export class AppAuthGuard extends KeycloakAuthGuard {
     super(router, keycloak);
   }
 
-  public override async isAccessAllowed(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot
-  ) {
+  async isAccessAllowed(route: ActivatedRouteSnapshot,
+                        state: RouterStateSnapshot){
     // Force the user to log in if currently unauthenticated.
     if (!this.authenticated) {
       await this.keycloak.login({
-        redirectUri: window.location.origin + '/app'
+        redirectUri: window.location.origin + state.url
       });
     }
 
     // Get the roles required from the route.
     const requiredRoles = route.data.roles;
 
-    // Allow the user to proceed if no additional roles are required to access the route.
-    if (!Array.isArray(requiredRoles) || requiredRoles.length === 0) {
+    // Allow the user to to proceed if no additional roles are required to access the route.
+    if (!(requiredRoles instanceof Array) || requiredRoles.length === 0) {
       return true;
     }
 

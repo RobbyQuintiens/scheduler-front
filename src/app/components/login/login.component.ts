@@ -12,7 +12,8 @@ export class LoginComponent {
   }
 
   public login() {
-    this.keycloak.login();
+   this.keycloak.login();
+    //console.log(this.keycloak.getUserRoles());
   }
 
   ngOnInit(): void {
