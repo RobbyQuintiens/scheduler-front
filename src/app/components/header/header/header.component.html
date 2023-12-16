@@ -1,0 +1,15 @@
+<mat-toolbar class="mat-toolbar">
+  <h1 class="header-white"><a>Scheduler</a></h1>
+  <div class="links">
+    <div class="user-links">
+    </div>
+    <div class="login-links">
+      <ul>
+        <li><a *ngIf="!isLoggedIn" class="login-logout" (click)="login()">Login</a></li>
+        <li><a *ngIf="isLoggedIn" class="login-logout" (click)="logout()">Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</mat-toolbar>
+
+

@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {Component} from '@angular/core';
 import {KeycloakService} from "keycloak-angular";
 
 @Component({
@@ -12,8 +11,7 @@ export class LoginComponent {
   }
 
   public login() {
-   this.keycloak.login();
-    //console.log(this.keycloak.getUserRoles());
+    this.keycloak.login();
   }
 
   ngOnInit(): void {

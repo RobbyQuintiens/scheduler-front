@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
+
+@media screen and (max-width: 1400px) {
+  .mat-toolbar {
+    height: 5rem !important;
+  }
+
+  .user-info-resp{
+    visibility: visible !important;
+  }
+
+  .links {
+    visibility: hidden;
+  }
+}
+
+.header-white {
+  color: #fff;
+}
+
+.mat-toolbar {
+  background-color: var(--colorOffice);
+  display: flex;
+  justify-content: space-between;
+}
+
+.links {
+  padding-right:2rem;
+  display: flex;
+  width: 60%;
+}
+
+.user-links {
+  flex: 1;
+  align-items: flex-end;
+  float: right;
+  display: flex;
+  flex-direction: row-reverse;
+  padding-right: 4rem;
+}
+
+.login-links {
+  padding-right: 1.5rem;
+  align-items: flex-end;
+}
+
+.user-links ul, .login-links ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.user-links li {
+  float: left;
+}
+
+li a {
+  font-size: 12pt;
+  display: block;
+  color: #fff;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.login-logout {
+  font-size: 12pt;
+  color: #fff;
+  cursor: pointer;
+}

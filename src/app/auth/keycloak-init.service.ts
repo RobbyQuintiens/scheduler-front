@@ -13,11 +13,12 @@ export function KeycloakInitService(keycloak: KeycloakService): () => Promise<an
             },
             initOptions: {
               onLoad: 'check-sso',
-              checkLoginIframe: false
+              checkLoginIframe: false,
+              flow: 'implicit'
             },
             loadUserProfileAtStartUp: false,
             enableBearerInterceptor: true,
-            //bearerExcludedUrls: ['/app'],
+            bearerExcludedUrls: ['/app'],
           });
           resolve();
         } catch (error) {

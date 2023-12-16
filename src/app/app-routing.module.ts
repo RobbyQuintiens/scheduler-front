@@ -1,20 +1,21 @@
-import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {AppAuthGuard} from "./auth/app-auth-guard";
 import {AppComponent} from "./app.component";
+import {TestComponent} from "./components/test/test.component";
+import {AppAuthGuard} from "./auth/app-auth-guard";
+import {LoginComponent} from "./components/login/login.component";
 
 const routes: Routes = [
   {
-    path: 'app',
+    path: 'login',
     canActivate: [AppAuthGuard],
-    component: AppComponent
-  }
+    component: LoginComponent,
+    data: { roles: ['app_user'] },
+    redirectTo: 'test'
+  },
+  {
+    path: 'test',
+    component: TestComponent,
+  },
 ];
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  providers: [AppAuthGuard],
-  exports: [RouterModule]
-})
-export class AppRoutingModule {
-}
+export const AppRoutes = RouterModule.forRoot(routes, {useHash: true});
