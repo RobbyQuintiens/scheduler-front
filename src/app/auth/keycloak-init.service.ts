@@ -17,8 +17,7 @@ export function KeycloakInitService(keycloak: KeycloakService): () => Promise<an
               flow: 'implicit'
             },
             loadUserProfileAtStartUp: false,
-            enableBearerInterceptor: true,
-            bearerExcludedUrls: ['/app'],
+            enableBearerInterceptor: true
           });
           resolve();
         } catch (error) {

@@ -1,0 +1,16 @@
+<div id="cardViews">
+  <div>
+    <div *ngFor="let appointment of appointments">
+      <div class="cardContainer">
+        <mat-card class="event-card">
+          <mat-card-content class="content"  [ngClass]="appointment.status=='CONFIRMED' ? 'green' : appointment.status=='DENIED' ? 'red' : 'blank'">
+            <h1>{{appointment?.customer?.username}} - {{appointment?.customer?.email}}</h1>
+            <h2>{{appointment.title}}</h2>
+            <h4>{{appointment.startTime}} - {{appointment.endTime}}</h4>
+            <h4>{{appointment.day}}</h4>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

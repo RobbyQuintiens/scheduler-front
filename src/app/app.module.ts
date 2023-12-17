@@ -13,6 +13,9 @@ import {TestComponent} from "./components/test/test.component";
 import {DefaultComponent} from "./components/default/default/default.component";
 import {HeaderComponent} from "./components/header/header/header.component";
 import {MatToolbarModule} from "@angular/material/toolbar";
+import {AppointmentService} from "./services/appointment.service";
+import {AppointmentCardComponent} from "./components/appointments/appointment-card/appointment-card.component";
+import {MatCardModule} from "@angular/material/card";
 
 @NgModule({
   declarations: [
@@ -20,7 +23,8 @@ import {MatToolbarModule} from "@angular/material/toolbar";
     LoginComponent,
     TestComponent,
     DefaultComponent,
-    HeaderComponent
+    HeaderComponent,
+    AppointmentCardComponent
   ],
   imports: [
     KeycloakAngularModule,
@@ -29,7 +33,8 @@ import {MatToolbarModule} from "@angular/material/toolbar";
     BrowserAnimationsModule,
     RouterModule,
     HttpClientModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatCardModule,
   ],
   providers: [
     {
@@ -37,7 +42,8 @@ import {MatToolbarModule} from "@angular/material/toolbar";
       useFactory: KeycloakInitService,
       multi: true,
       deps: [KeycloakService]
-    }],
+    },
+  AppointmentService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

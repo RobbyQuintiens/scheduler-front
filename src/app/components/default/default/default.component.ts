@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import { CommonModule } from '@angular/common';
 import {KeycloakService} from "keycloak-angular";
 
 @Component({
@@ -7,7 +6,7 @@ import {KeycloakService} from "keycloak-angular";
   templateUrl: './default.component.html',
   styleUrl: './default.component.css'
 })
-export class DefaultComponent implements OnInit{
+export class DefaultComponent implements OnInit {
 
   public isLoggedIn = false;
 
