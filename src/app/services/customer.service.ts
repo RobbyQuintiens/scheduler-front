@@ -2,17 +2,18 @@ import { Injectable } from '@angular/core';
 import {Appointment} from "../models/appointment";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {catchError, Observable, throwError} from "rxjs";
+import {Customer} from "../models/customer";
 
 @Injectable({
   providedIn: 'root'
 })
-export class AppointmentService {
+export class CustomerService {
 
-  appointments!: Appointment[];
-  private readonly appointmentUrl: string;
+  customers!: Customer[];
+  private readonly customerUrl: string;
 
   constructor(private http: HttpClient) {
-    this.appointmentUrl = '/scheduler/appointments';
+    this.customerUrl = '/customer/customers';
   }
 
   httpOptions: any = {
@@ -20,10 +21,10 @@ export class AppointmentService {
     responseType: 'text' as 'text',
   };
 
-  public getAllAppointments(): Observable<Appointment[]> {
-    return this.http.get<Appointment[]>(this.appointmentUrl).pipe(
+  public getAllCustomers(param: any): Observable<Customer[]> {
+    return this.http.get<Customer[]>(this.customerUrl, {params: param}).pipe(
       catchError(error => {
-        return throwError('No appointments found');
+        return throwError('No customers found');
       })
     );
   }

@@ -1,0 +1,44 @@
+<router-outlet></router-outlet><div class="menu-left">
+  <ul class="menu__box" *ngIf="isLoggedIn">
+    <li>
+      <div class="icon_item">
+        <mat-icon aria-hidden="false" fontIcon="toc"></mat-icon>
+        <a class="menu__item">Overview</a>
+      </div>
+    </li>
+    <li>
+      <div class="icon_item" routerLink="/test">
+        <mat-icon aria-hidden="false" fontIcon="calendar_view_day"></mat-icon>
+        <a class="menu__item">Appointments</a>
+      </div>
+    </li>
+    <li>
+      <div class="icon_item" [routerLink]="['/customers']">
+        <mat-icon aria-hidden="false" fontIcon="supervisor_account"></mat-icon>
+        <a class="menu__item">Customers</a>
+      </div>
+    </li>
+    <li>
+      <div class="icon_item">
+        <mat-icon aria-hidden="false" fontIcon="business"></mat-icon>
+        <a class="menu__item">Company Details</a>
+      </div>
+    </li>
+    <li>
+      <div class="icon_item">
+        <mat-icon aria-hidden="false" fontIcon="note_add"></mat-icon>
+        <a class="menu__item">Billing</a>
+      </div>
+    </li>
+    <li>
+      <div class="icon_item">
+        <mat-icon aria-hidden="false" fontIcon="info"></mat-icon>
+        <a class="menu__item">Profile</a>
+      </div>
+    </li>
+  </ul>
+  <ul>
+    <li><a class="menu__item" *ngIf="!isLoggedIn" (click)="login()">Login</a></li>
+    <li><a class="menu__item" *ngIf="isLoggedIn" (click)="logout()">Logout</a></li>
+  </ul>
+</div>

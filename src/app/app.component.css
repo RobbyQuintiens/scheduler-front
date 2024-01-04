@@ -1,0 +1,18 @@
+.menu-left {
+  grid-area: sidebar;
+  background-color: var(--colorOffice);
+  padding: 0px;
+}
+
+.content {
+  grid-area: content;
+  background-color: rgba(248, 248, 248, 1);
+}
+
+.container {
+  margin-top: -15px;
+  display: grid;
+  grid-template-columns: 1fr 6fr;
+  grid-template-areas:
+    "sidebar content"
+}

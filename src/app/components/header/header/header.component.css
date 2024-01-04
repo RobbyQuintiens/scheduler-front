@@ -18,12 +18,16 @@
   }
 }
 
+.container {
+  padding: 0;
+}
+
 .header-white {
   color: #fff;
 }
 
 .mat-toolbar {
-  background-color: var(--colorOffice);
+  background-color: var(--colorOfficeLight);
   display: flex;
   justify-content: space-between;
 }

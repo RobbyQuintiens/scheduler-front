@@ -1,3 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
+
+#cardViews > mat-card {
+  width: 200px;
+}
+
+#cardViews {
+  width: 95%;
+  margin: 0 auto;
+}
+
+fa-icon {
+  float: left;
+  margin-right: 0.7rem;
+}
+
+.appointment-card {
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+  border-radius: 20px;
+  width: 100%;
+  margin: 2rem;
+}
+
+.content {
+  color: #5E5E5E;
+}
+
+.content h2 {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  color: #000;
+}
+
+.content p {
+  font-family: "Poppins", sans-serif;
+  margin: 0.1rem 0 0 0;
+}
+
 .blank {
 
 }
@@ -8,4 +46,14 @@
 
 .red {
   background-color: red;
+}
+
+.tag {
+  border-radius: 10px;
+  width: 125px;
+  text-align: center;
+  padding: 0.15rem 0 0.15rem 0;
+  color: #000;
+  position: relative;
+  margin-right: 0;
 }

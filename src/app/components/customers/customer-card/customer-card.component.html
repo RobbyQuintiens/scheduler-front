@@ -1,0 +1,21 @@
+<mat-card class="customer-card">
+  <mat-card-content class="content">
+    <div class="content-info">
+      <div class="content-text-item"><h3>{{customer.lastName}}</h3></div>
+      <div class="content-text-item"><h3>{{customer.firstName}}</h3></div>
+      <div class="content-text-item"><h3>{{customer.email}}</h3></div>
+      <div class="content-text-item"><h3>{{customer.company}}</h3></div>
+<!--      tag particulier/company-->
+    </div>
+    <div class="content-info">
+      <button mat-raised-button class="blue-button">
+        <mat-icon>edit</mat-icon>
+        Edit
+      </button>
+      <button mat-raised-button class="blue-button">
+        <mat-icon>settings</mat-icon>
+        More
+      </button>
+    </div>
+  </mat-card-content>
+</mat-card>

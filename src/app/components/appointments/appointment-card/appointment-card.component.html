@@ -1,16 +1,15 @@
 <div id="cardViews">
-  <div>
-    <div *ngFor="let appointment of appointments">
-      <div class="cardContainer">
-        <mat-card class="event-card">
-          <mat-card-content class="content"  [ngClass]="appointment.status=='CONFIRMED' ? 'green' : appointment.status=='DENIED' ? 'red' : 'blank'">
+  <mat-grid-list cols="1" rowHeight="5:1">
+    <mat-grid-tile *ngFor="let appointment of appointments" >
+        <mat-card class="appointment-card">
+          <div class="tag" [ngClass]="appointment.status=='CONFIRMED' ? 'green' : appointment.status=='DENIED' ? 'red' : 'blank'">{{appointment.status}}</div>
+          <mat-card-content class="content">
             <h1>{{appointment?.customer?.username}} - {{appointment?.customer?.email}}</h1>
             <h2>{{appointment.title}}</h2>
             <h4>{{appointment.startTime}} - {{appointment.endTime}}</h4>
             <h4>{{appointment.day}}</h4>
           </mat-card-content>
         </mat-card>
-      </div>
-    </div>
-  </div>
+    </mat-grid-tile>
+  </mat-grid-list>
 </div>

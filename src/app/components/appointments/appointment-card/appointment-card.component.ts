@@ -22,7 +22,7 @@ export class AppointmentCardComponent implements OnChanges{
   }
 
   getAppointments(): void {
-    this.appointmentService.getAppointmentById().subscribe(appointment =>
+    this.appointmentService.getAllAppointments().subscribe(appointment =>
       this.appointments = appointment
     );
   }

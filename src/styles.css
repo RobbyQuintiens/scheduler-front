@@ -7,5 +7,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 :root{
   --colorAdmin: rgb(165, 173, 189);
   --colorOffice: #496cea;
+  --colorOfficeLight: #dcdcdc;
 }
 

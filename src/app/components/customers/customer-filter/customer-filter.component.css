@@ -1,0 +1,37 @@
+.container {
+  width: 100%;
+}
+
+.searchbar {
+  float: left;
+  width: 550px;
+}
+
+.sortBy, .type {
+  float: right;
+  width: 120px;
+  margin: 0 1rem 0 1rem;
+}
+
+.sort mat-label, mat-select{
+  font-size: 10pt;
+}
+
+.filters {
+  width: 100%;
+  margin: 1rem 0 1rem 0;
+  display: inline-block;
+}
+
+.add {
+  margin-bottom: 1rem;
+}
+
+.blue-button {
+  background-color: var(--colorOffice) !important;
+  color: #fff !important;
+}
+
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
+  background-color: #fff;
+}

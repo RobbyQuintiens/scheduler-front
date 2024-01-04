@@ -1,0 +1,39 @@
+.menu-left {
+}
+
+.menu__box {
+  display: block;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 80px 0;
+  list-style: none;
+}
+
+.menu__item {
+  display: block;
+  padding: 20px 10px;
+  color: #f5f5f5;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition-duration: .25s;
+  cursor: pointer;
+}
+
+.icon_item:hover {
+  background-color: #c4c4c4;
+}
+
+.icon_item {
+  display: flex;
+  align-items: center;
+  padding-left: 1.5rem;
+}
+
+mat-icon {
+  color: #fff;
+  font-size: 17pt;
+}

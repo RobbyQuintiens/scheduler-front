@@ -1,7 +1,7 @@
 import {APP_INITIALIZER, NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 
-import {AppRoutes} from './app-routing.module';
+import {AppRoutes, AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {KeycloakAngularModule, KeycloakService} from "keycloak-angular";
@@ -16,6 +16,18 @@ import {MatToolbarModule} from "@angular/material/toolbar";
 import {AppointmentService} from "./services/appointment.service";
 import {AppointmentCardComponent} from "./components/appointments/appointment-card/appointment-card.component";
 import {MatCardModule} from "@angular/material/card";
+import {MatGridListModule} from "@angular/material/grid-list";
+import {MenuComponent} from "./components/menu/menu.component";
+import {MatIconModule} from "@angular/material/icon";
+import {CustomerListComponent} from "./components/customers/customer-list/customer-list.component";
+import {MatButtonModule} from "@angular/material/button";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
+import {FormsModule} from "@angular/forms";
+import {MatSelectModule} from "@angular/material/select";
+import {CustomerFilterComponent} from "./components/customers/customer-filter/customer-filter.component";
+import {CustomerCardComponent} from "./components/customers/customer-card/customer-card.component";
+import {MatButtonToggleModule} from "@angular/material/button-toggle";
 
 @NgModule({
   declarations: [
@@ -24,7 +36,11 @@ import {MatCardModule} from "@angular/material/card";
     TestComponent,
     DefaultComponent,
     HeaderComponent,
-    AppointmentCardComponent
+    AppointmentCardComponent,
+    MenuComponent,
+    CustomerListComponent,
+    CustomerFilterComponent,
+    CustomerCardComponent
   ],
   imports: [
     KeycloakAngularModule,
@@ -35,6 +51,14 @@ import {MatCardModule} from "@angular/material/card";
     HttpClientModule,
     MatToolbarModule,
     MatCardModule,
+    MatGridListModule,
+    MatIconModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule,
+    MatSelectModule,
+    MatButtonToggleModule,
   ],
   providers: [
     {

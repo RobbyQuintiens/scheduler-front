@@ -1,0 +1,27 @@
+.content {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 1rem;
+}
+
+.content-text-item {
+  transform: translateY(20%);
+}
+
+.content-info {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.content-info > div {
+  width: 100px;
+}
+
+.customer-card {
+  margin: 0 1rem 1rem 0;
+  box-shadow: none;
+}
