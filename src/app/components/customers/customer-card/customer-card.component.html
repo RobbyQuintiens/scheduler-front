@@ -1,10 +1,14 @@
 <mat-card class="customer-card">
   <mat-card-content class="content">
     <div class="content-info">
-      <div class="content-text-item"><h3>{{customer.lastName}}</h3></div>
-      <div class="content-text-item"><h3>{{customer.firstName}}</h3></div>
+      <div class="content-text-item"><h3>{{customer.lastName}} {{customer.firstName}}</h3></div>
       <div class="content-text-item"><h3>{{customer.email}}</h3></div>
-      <div class="content-text-item"><h3>{{customer.company}}</h3></div>
+      <div class="content-text-item tag" *ngIf="customer.company">
+          <p class="tag companyTag">Company</p>
+      </div>
+      <div class="content-text-item tag" *ngIf="!customer.company">
+        <p class="tag individualTag">Individual</p>
+      </div>
 <!--      tag particulier/company-->
     </div>
     <div class="content-info">

@@ -3,3 +3,11 @@
      *ngFor="let customer of customers.content">
   <app-customer-card [customer]="customer"></app-customer-card>
 </div>
+<mat-paginator
+  *ngIf="customers" [length]="customers.totalElements"
+  [pageSize]="pageSize"
+  [pageSizeOptions]="pageSizeOptions"
+  [pageIndex]="currentPage"
+  aria-label="Select page"
+  (page)="handlePage($event)">
+</mat-paginator>

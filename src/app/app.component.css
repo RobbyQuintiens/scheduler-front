@@ -1,6 +1,6 @@
 .menu-left {
   grid-area: sidebar;
-  background-color: var(--colorOffice);
+  background-color: #fff;
   padding: 0px;
 }
 

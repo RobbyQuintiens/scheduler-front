@@ -19,7 +19,8 @@
 }
 
 .container {
-  padding: 0;
+  /*padding: 0;*/
+  margin-bottom: 5rem;
 }
 
 .header-white {
@@ -27,7 +28,7 @@
 }
 
 .mat-toolbar {
-  background-color: var(--colorOfficeLight);
+  /*background-color: var(--colorOfficeLight);*/
   display: flex;
   justify-content: space-between;
 }

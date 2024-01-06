@@ -21,7 +21,7 @@ export class CustomerService {
     responseType: 'text' as 'text',
   };
 
-  public getAllCustomers(param: any): Observable<Customer[]> {
+  public getAllCustomers(param?: any): Observable<Customer[]> {
     return this.http.get<Customer[]>(this.customerUrl, {params: param}).pipe(
       catchError(error => {
         return throwError('No customers found');

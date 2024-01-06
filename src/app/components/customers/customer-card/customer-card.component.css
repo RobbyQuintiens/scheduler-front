@@ -1,6 +1,6 @@
 .content {
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
   align-items: center;
   justify-content: space-between;
   margin-left: 1rem;
@@ -18,10 +18,29 @@
 }
 
 .content-info > div {
-  width: 100px;
+  width: 200px;
 }
 
 .customer-card {
   margin: 0 1rem 1rem 0;
   box-shadow: none;
+}
+
+.content-info > .tag{
+  width: 75px;
+  color: #fff;
+}
+
+.tag {
+  text-align: center;
+  padding: 0.3rem;
+  border-radius: 5px;
+}
+
+.companyTag {
+  background-color: var(--colorOffice);
+}
+
+.individualTag {
+  background-color: var(--colorInd);
 }

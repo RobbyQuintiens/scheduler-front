@@ -1,6 +1,7 @@
-import {Component, OnChanges, SimpleChanges} from '@angular/core';
+import {Component, OnChanges, SimpleChanges, ViewChild} from '@angular/core';
 import {Customer} from "../../../models/customer";
 import {CustomerService} from "../../../services/customer.service";
+import {MatPaginator} from "@angular/material/paginator";
 
 @Component({
   selector: 'app-customer-list',
@@ -9,17 +10,30 @@ import {CustomerService} from "../../../services/customer.service";
 })
 export class CustomerListComponent implements OnChanges {
 
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+
   customer!: Customer;
   customers!: any;
+  pageSize = 10;
+  pageSizefix: number = this.pageSize;
+  pageSizeOptions = [5, 10];
+  currentPage = 0;
+  length: number;
 
   constructor(private customerService: CustomerService) {
   }
 
-  async ngOnInit() {
+  ngOnInit() {
     this.getCustomers();
   }
 
-  getParamsCustomers(page: number, size?: number) {
+  handlePage(event: any) {
+    this.currentPage = event.pageIndex;
+    this.pageSizefix = event.pageSize;
+    this.getCustomers();
+  }
+
+  getParamsCustomers(page: number, size?: number, company?: boolean) {
     const params: any = {};
     // if (locationCity) {
     //   params.location_city = locationCity;
@@ -27,9 +41,9 @@ export class CustomerListComponent implements OnChanges {
     // if (eventType) {
     //   params.eventType = eventType.toUpperCase();
     // }
-    // if (eventName) {
-    //   params.eventName = eventName;
-    // }
+    if (company) {
+      params.company = company;
+    }
     if (page) {
       params.page = page;
     }
@@ -40,9 +54,8 @@ export class CustomerListComponent implements OnChanges {
   }
 
   getCustomers(): void {
-    const params = this.getParamsCustomers(0);
+    const params = this.getParamsCustomers(this.currentPage, this.pageSizefix);
     this.customerService.getAllCustomers(params).subscribe(customer => {
-        console.log(customer);
         this.customers = customer;
       }
     );

@@ -14,7 +14,7 @@
 .menu__item {
   display: block;
   padding: 20px 10px;
-  color: #f5f5f5;
+  color: #262626;
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
   font-weight: 600;
@@ -24,7 +24,7 @@
 }
 
 .icon_item:hover {
-  background-color: #c4c4c4;
+  background-color:  var(--colorOfficeLight);
 }
 
 .icon_item {
@@ -34,6 +34,6 @@
 }
 
 mat-icon {
-  color: #fff;
+  color: #262626;
   font-size: 17pt;
 }

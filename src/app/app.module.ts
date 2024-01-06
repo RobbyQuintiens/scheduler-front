@@ -28,6 +28,7 @@ import {MatSelectModule} from "@angular/material/select";
 import {CustomerFilterComponent} from "./components/customers/customer-filter/customer-filter.component";
 import {CustomerCardComponent} from "./components/customers/customer-card/customer-card.component";
 import {MatButtonToggleModule} from "@angular/material/button-toggle";
+import {MatPaginatorModule} from "@angular/material/paginator";
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import {MatButtonToggleModule} from "@angular/material/button-toggle";
     FormsModule,
     MatSelectModule,
     MatButtonToggleModule,
+    MatPaginatorModule,
   ],
   providers: [
     {
