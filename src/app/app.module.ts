@@ -23,12 +23,20 @@ import {CustomerListComponent} from "./components/customers/customer-list/custom
 import {MatButtonModule} from "@angular/material/button";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatSelectModule} from "@angular/material/select";
 import {CustomerFilterComponent} from "./components/customers/customer-filter/customer-filter.component";
 import {CustomerCardComponent} from "./components/customers/customer-card/customer-card.component";
 import {MatButtonToggleModule} from "@angular/material/button-toggle";
 import {MatPaginatorModule} from "@angular/material/paginator";
+import {MatCheckboxModule} from "@angular/material/checkbox";
+import {CustomerComponent} from "./components/customers/customer/customer.component";
+import {AddCustomerComponent} from "./components/customers/add-customer/add-customer.component";
+import {MatStepperModule} from "@angular/material/stepper";
+import {
+  CompanyDetailsMainComponent
+} from "./components/companyDetails/company-details-main/company-details-main.component";
+import {BillingMainComponent} from "./components/billing/billing-main/billing-main.component";
 
 @NgModule({
   declarations: [
@@ -41,7 +49,11 @@ import {MatPaginatorModule} from "@angular/material/paginator";
     MenuComponent,
     CustomerListComponent,
     CustomerFilterComponent,
-    CustomerCardComponent
+    CustomerCardComponent,
+    CustomerComponent,
+    AddCustomerComponent,
+    CompanyDetailsMainComponent,
+    BillingMainComponent
   ],
   imports: [
     KeycloakAngularModule,
@@ -61,6 +73,9 @@ import {MatPaginatorModule} from "@angular/material/paginator";
     MatSelectModule,
     MatButtonToggleModule,
     MatPaginatorModule,
+    MatCheckboxModule,
+    ReactiveFormsModule,
+    MatStepperModule
   ],
   providers: [
     {

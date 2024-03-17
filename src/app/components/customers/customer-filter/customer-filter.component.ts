@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {Component, EventEmitter, Output} from '@angular/core';
+import {MatCheckboxChange} from "@angular/material/checkbox";
 
 @Component({
   selector: 'app-customer-filter',
@@ -8,9 +8,15 @@ import { CommonModule } from '@angular/common';
 })
 export class CustomerFilterComponent {
 
+  @Output() isCompanyOutputEvent = new EventEmitter<any>();
   value = '';
 
   constructor() {
+  }
+
+  getIsCompany(event: MatCheckboxChange) {
+    this.isCompanyOutputEvent.emit(event.checked);
+    console.log(event.checked);
   }
 
 }

@@ -1,7 +1,15 @@
-<app-customer-filter></app-customer-filter>
+<div class="labels">
+  <div class="content-info">
+    <div class="content-text-item"><p>Name</p></div>
+    <div class="content-text-item"><p>Email</p></div>
+    <div class="content-text-item tag"><p>Type</p></div>
+    <div class="content-text-item"><p>City</p></div>
+    <div class="content-text-item"><p>Country</p></div>
+  </div>
+</div>
 <div
      *ngFor="let customer of customers.content">
-  <app-customer-card [customer]="customer"></app-customer-card>
+  <app-customer-card [customer]="customer" (deleteCustomerEvent)="deleteCustomer($event)"></app-customer-card>
 </div>
 <mat-paginator
   *ngIf="customers" [length]="customers.totalElements"

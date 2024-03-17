@@ -1,4 +1,4 @@
-import {Component, OnChanges, SimpleChanges, ViewChild} from '@angular/core';
+import {Component, Input, OnChanges, ViewChild} from '@angular/core';
 import {Customer} from "../../../models/customer";
 import {CustomerService} from "../../../services/customer.service";
 import {MatPaginator} from "@angular/material/paginator";
@@ -12,6 +12,7 @@ export class CustomerListComponent implements OnChanges {
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
+  @Input() isCompany!: boolean;
   customer!: Customer;
   customers!: any;
   pageSize = 10;
@@ -53,16 +54,21 @@ export class CustomerListComponent implements OnChanges {
     return params;
   }
 
-  getCustomers(): void {
-    const params = this.getParamsCustomers(this.currentPage, this.pageSizefix);
+  getCustomers(isCompany?: boolean) {
+    const params = this.getParamsCustomers(this.currentPage, this.pageSizefix, isCompany);
     this.customerService.getAllCustomers(params).subscribe(customer => {
         this.customers = customer;
       }
     );
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    this.getCustomers();
+  deleteCustomer(event: any) {
+    this.customerService.deleteCustomer(event).subscribe(customer => {
+      this.customers = customer;
+    });
   }
 
+  ngOnChanges(): void {
+    this.getCustomers(this.isCompany);
+  }
 }
