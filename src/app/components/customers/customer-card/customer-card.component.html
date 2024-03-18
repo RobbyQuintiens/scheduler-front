@@ -13,13 +13,17 @@
       <div class="content-text-item"><p>{{customer.addresses[0].country}}</p></div>
     </div>
     <div class="content-info">
-      <button mat-raised-button class="blue-button">
-        <mat-icon>edit</mat-icon>
-        Edit
+      <button mat-raised-button color="primary" class="blue-button">
+        <mat-icon>person</mat-icon>
+        View
       </button>
-      <button mat-raised-button class="blue-button" (click)="deleteCustomer(customer.id)">
-        <mat-icon>settings</mat-icon>
-        More
+<!--      <button mat-raised-button color="warn" class="blue-button" (click)="deleteCustomer(customer.id)">-->
+<!--        <mat-icon>delete</mat-icon>-->
+<!--        Delete-->
+<!--      </button>-->
+      <button mat-raised-button color="warn" class="blue-button" (click)="openDialog('0ms', '0ms', 'delete', customer)">
+        <mat-icon>delete</mat-icon>
+        Delete
       </button>
     </div>
   </div>

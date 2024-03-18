@@ -63,8 +63,10 @@ export class CustomerListComponent implements OnChanges {
   }
 
   deleteCustomer(event: any) {
+    console.log(event);
     this.customerService.deleteCustomer(event).subscribe(customer => {
       this.customers = customer;
+      this.getCustomers(this.isCompany);
     });
   }
 

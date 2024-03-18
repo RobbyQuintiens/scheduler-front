@@ -1,0 +1,8 @@
+<h2 mat-dialog-title>{{action}} {{localData.type}}</h2>
+<mat-dialog-content>
+  Would you like to {{action}} {{localData.type}}: <b>{{localData.localData.firstName}}</b>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close>No</button>
+  <button mat-button color="warn" cdkFocusInitial (click)="doAction()">Ok</button>
+</mat-dialog-actions>

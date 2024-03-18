@@ -1,7 +1,7 @@
 import {APP_INITIALIZER, NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 
-import {AppRoutes, AppRoutingModule} from './app-routing.module';
+import {AppRoutes} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {KeycloakAngularModule, KeycloakService} from "keycloak-angular";
@@ -84,7 +84,7 @@ import {BillingMainComponent} from "./components/billing/billing-main/billing-ma
       multi: true,
       deps: [KeycloakService]
     },
-  AppointmentService],
+    AppointmentService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

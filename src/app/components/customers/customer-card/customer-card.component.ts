@@ -1,9 +1,13 @@
-import {Component, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Customer} from "../../../models/customer";
-import {CustomerService} from "../../../services/customer.service";
-import { EventEmitter } from '@angular/core';
+import {DeleteDialogComponent} from "../../dialogs/delete-dialog/delete-dialog.component";
+import {MatDialog} from "@angular/material/dialog";
+import {Event} from "@angular/router";
 
-;
+export interface DialogData {
+  type: string;
+  action: string;
+}
 
 @Component({
   selector: 'app-customer-card',
@@ -16,11 +20,31 @@ export class CustomerCardComponent implements OnInit {
 
   @Output() deleteCustomerEvent: EventEmitter<number> = new EventEmitter<number>();
 
-  constructor(private customerService: CustomerService) {
+  idToDelete?: number;
+
+  constructor(public dialog: MatDialog) {
   }
 
-  deleteCustomer(id?: number) {
-    this.deleteCustomerEvent.emit(id);
+  deleteCustomer(event: any) {
+    this.deleteCustomerEvent.emit(event);
+  }
+
+  openDialog(enterAnimationDuration: string, exitAnimationDuration: string, action: string, obj: any): void {
+    obj.action = action;
+    const dialogRef = this.dialog.open(DeleteDialogComponent, {
+      width: '250px',
+      enterAnimationDuration,
+      exitAnimationDuration,
+      data:{
+        localData: obj,
+        type: 'Customer',
+        action: 'Delete'
+      }
+    });
+
+    dialogRef.beforeClosed().subscribe(result => {
+      this.deleteCustomer(result.data);
+    });
   }
 
   ngOnInit(): void {
