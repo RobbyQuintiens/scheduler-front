@@ -5,7 +5,7 @@ FROM registry.access.redhat.com/ubi8/nodejs-18:1-71.1695741533
 WORKDIR /app
 
 # Copy package.json and package-lock.json (if available)
-COPY package*.json ./
+COPY --chown=1001:1001 package.json package-lock.json ./
 
 # Install all Angular dependacies
 RUN npm ci
