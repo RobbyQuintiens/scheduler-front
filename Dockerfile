@@ -1,5 +1,5 @@
 # Step 1: Build the Angular app using a smaller Node.js base image
-FROM node:18-alpine AS build
+FROM registry.access.redhat.com/ubi8/nodejs-18:1-71.1695741533
 
 # Set working directory
 WORKDIR /app
@@ -7,29 +7,17 @@ WORKDIR /app
 # Copy package.json and package-lock.json (if available)
 COPY package*.json ./
 
-# Install dependencies
-RUN npm install
+# Install all Angular dependacies
+RUN npm ci
 
-# Install Angular CLI globally
-RUN npm install -g @angular/cli
-
-# Install dependencies (only production dependencies)
-RUN npm ci --production
-
-# Copy the rest of the application
+# Add application files in container
 COPY . .
 
-# Build the Angular app for production
-RUN npm run build --prod
+# Set permision of .angular file in container
+VOLUME ["/project/.angular"]
 
-# Step 2: Serve the Angular app using Nginx (final image)
-FROM nginx:alpine
+# Open port to allow traffic in container
+EXPOSE 8080
 
-# Copy the built Angular app from the build stage
-COPY --from=build /app/dist/scheduler-front /usr/share/nginx/html
-
-# Expose port 80 to access the Angular app
-EXPOSE 80
-
-# Start Nginx when the container launches
-CMD ["nginx", "-g", "daemon off;"]
+# Run start script using npm command
+CMD ["npm", "start"]
